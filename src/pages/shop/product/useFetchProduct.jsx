@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const useFetchData = (url) => {
+const useFetchProduct = (pid) => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -10,9 +10,8 @@ const useFetchData = (url) => {
   useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await axios.get(url)
-            const shuffledRes = response.data.sort(() => 0.5 - Math.random())
-            setData(shuffledRes)
+            const response = await axios.get(`https://fakestoreapi.com/products/${pid}`)
+            setData(response.data)
             setLoading(false)
         } catch (err) {
             setError(err)
@@ -20,9 +19,10 @@ const useFetchData = (url) => {
         }
     }
     fetchData()
-  }, [url])
+  }, [pid])
 
+  console.log(data)
   return { data, loading, error }
 }
 
-export default useFetchData
+export default useFetchProduct

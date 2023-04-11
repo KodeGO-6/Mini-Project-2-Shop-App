@@ -3,7 +3,7 @@ import React from 'react'
 export const Searchbar = () => {
   return (
     <div className="col-lg-4 col-6 text-left">
-        <form action>
+        <form>
             <div className="input-group">
             <input type="text" className="form-control" placeholder="Search for products" />
             <div className="input-group-append">

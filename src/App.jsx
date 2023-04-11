@@ -7,24 +7,30 @@ import { Index } from './pages/index/Index'
 import { Shop } from './pages/shop/Shop'
 import { Cart } from './pages/cart/Cart'
 import { Contact } from './pages/Contact'
-import { Route, Routes } from 'react-router-dom'
 import { ProductDetail } from './pages/shop/product/ProductDetail'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ShopContextProvider } from './context/ShopContext'
+
 
 function App() {
 
   return (
     <div className="App">
-      <Topbar />
-      <Navbar />
-      <Routes>
-        <Route path='/' index element={<Index />} />
-        <Route path='/user' element={<UserLogin />} />
-        <Route path='/shop' element={<Shop />} />
-        <Route path='/products/:pid' element={<ProductDetail />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
-      <Footer />
+      <ShopContextProvider>
+        <Router>
+          <Topbar />
+          <Navbar />
+          <Routes>
+            <Route path='/' index element={<Index />} />
+            <Route path='/user' element={<UserLogin />} />
+            <Route path='/shop' element={<Shop />} />
+            <Route path='/products/:pid' element={<ProductDetail />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/contact' element={<Contact />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </ShopContextProvider>
     </div>
   )
 }

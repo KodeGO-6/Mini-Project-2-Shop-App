@@ -1,9 +1,11 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import useFetchData from '../../useFetchData'
+import { ShopContext } from '../../context/ShopContext'
 
 export const Product = () => {
     const { data, loading, error } = useFetchData('https://fakestoreapi.com/products')
+    const { cartItems, addToCart } = useContext(ShopContext)
     const navigate = useNavigate()
 
     { loading && <div>Loading... </div> }
@@ -27,11 +29,11 @@ export const Product = () => {
             <div className="product-img position-relative overflow-hidden">
             <img className="img-fluid w-100" src={product.image} alt="" />
             <div className="product-action">
+                <Link className="btn btn-outline-dark btn-square" onClick={() => addToCart(product.id)}>
+                    <i className="fas fa-shopping-cart" />
+                </Link>
                 <a className="btn btn-outline-dark btn-square" href="">
-                <i className="fa fa-shopping-cart" />
-                </a>
-                <a className="btn btn-outline-dark btn-square" href="">
-                <i className="far fa-heart" />
+                    <i className="fas fa-heart" />
                 </a>
             </div>
             </div>
