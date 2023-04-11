@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Carousel } from './Carousel'
 import { Featured } from './Featured'
 import { Categories } from './Categories'
@@ -11,7 +11,7 @@ export const Index = () => {
       <Carousel />
       <Featured />
       <Categories />
-      <Products maxLength={Number(8)}/>
+      <Products />
       <Offer />
     </>
   )

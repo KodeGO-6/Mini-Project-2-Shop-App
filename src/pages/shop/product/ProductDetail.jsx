@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { SocialMedia } from './SocialMedia'
 import { Breadcrumbs } from './Breadcrumbs'
@@ -7,7 +7,7 @@ import useFetchProduct from './useFetchProduct'
 
 export const ProductDetail = () => {
     const productId = useParams()
-    const { data } = useFetchProduct(productId.pid)
+    const { data, loading } = useFetchProduct(productId.pid)
     const { cartItems, addToCart } = useContext(ShopContext)
 
   return (
@@ -15,6 +15,9 @@ export const ProductDetail = () => {
     <Breadcrumbs />
     <div className='container-fluid pb-5'>
         <div className='row px-xl-5'>
+            {loading && (
+                <div><h1>Loading...</h1></div>
+            )}
             <div className='col-lg-5 mb-30 product-img-wrap'>
                 <img className='w-100 h-100 product-image' src={data.image} alt='image' /> 
             </div>

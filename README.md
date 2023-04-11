@@ -22,17 +22,17 @@
 ## CURRENT FEATURES IMPLEMENTED
 - [x] Responsive Web Design
 - [x] Multi-page
-- [x] Display all products
-- [ ] User login
+- [x] Display all products   
 - [x] View product
 - [x] Add to cart
+- [ ] Add to wishlist
 - [ ] Search Product
 - [ ] Sort Product by Category
-- [ ] Add to wishlist
 
 ---
 
 ## ADDITIONAL POST-RELEASE FEATURES (OPTIONAL)
+- [ ] User login 
 - [ ] Cart checkout
 - [ ] Admin Dashboard
 --- 

@@ -12,6 +12,7 @@ export const Product = () => {
     { error && <div>Error: {error.message}</div> }
 
     const productHandler = (productId) => {
+        alert(`/products/${productId}`)
         navigate(`/products/${productId}`)
     }
 
@@ -32,18 +33,17 @@ export const Product = () => {
                 <Link className="btn btn-outline-dark btn-square" onClick={() => addToCart(product.id)}>
                     <i className="fas fa-shopping-cart" />
                 </Link>
-                <a className="btn btn-outline-dark btn-square" href="">
+                <Link className="btn btn-outline-dark btn-square" >
                     <i className="fas fa-heart" />
-                </a>
+                </Link>
             </div>
             </div>
             <div className="text-center py-4">
-            <a 
+            <Link 
                 className="h6 text-decoration-none text-truncate" 
-                href="" 
-                onClick={() => productHandler(product.id)}>
+                to={`/products/${product.id}`}>
                 <TruncateText text={product.title} />
-            </a>
+            </Link>
             <div className="d-flex align-items-center justify-content-center mt-2">
                 <h5>$ {product.price}</h5>
                 <h6 className="text-muted ml-2">
