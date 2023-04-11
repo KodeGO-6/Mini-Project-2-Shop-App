@@ -1,11 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import useFetchData from '../../useFetchData'
 
 export const Product = () => {
     const { data, loading, error } = useFetchData('https://fakestoreapi.com/products')
+    const navigate = useNavigate()
 
     { loading && <div>Loading... </div> }
     { error && <div>Error: {error.message}</div> }
+
+    const productHandler = (productId) => {
+        navigate(`/products/${productId}`)
+    }
 
     const TruncateText = ({ text }) => {
         const truncateText = text.length > 20 ? text.slice(0, 30) + '...' : text;
@@ -30,7 +36,10 @@ export const Product = () => {
             </div>
             </div>
             <div className="text-center py-4">
-            <a className="h6 text-decoration-none text-truncate" href="">
+            <a 
+                className="h6 text-decoration-none text-truncate" 
+                href="" 
+                onClick={() => productHandler(product.id)}>
                 <TruncateText text={product.title} />
             </a>
             <div className="d-flex align-items-center justify-content-center mt-2">
