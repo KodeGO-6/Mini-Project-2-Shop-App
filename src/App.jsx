@@ -2,8 +2,11 @@ import './App.css'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { Topbar } from './components/Topbar'
+import { UserLogin } from './components/UserLogin'
 import { Index } from './pages/index/Index'
 import { Shop } from './pages/shop/Shop'
+import { Cart } from './pages/cart/Cart'
+import { Contact } from './pages/Contact'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -14,7 +17,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' index element={<Index />} />
+        <Route path='/user' element={<UserLogin />} />
         <Route path='/shop' element={<Shop />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </div>
