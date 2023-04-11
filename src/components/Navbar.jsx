@@ -1,5 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+
+  return (
+      <Link 
+        className={isActive ? 'nav-item nav-link active' : 'nav-item nav-link'}
+        to={to} {...props}>{children}</Link>
+  )
+}
 
 export const Navbar = () => {
   return (
@@ -73,20 +84,8 @@ export const Navbar = () => {
             id="navbarCollapse"
           >
             <div className="navbar-nav mr-auto py-0">
-              <NavLink 
-                to="/" 
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : "nav-item nav-link"
-                }>
-                Home
-              </NavLink>
-              <NavLink 
-                to="/shop" 
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : "nav-item nav-link"
-                }>
-                Shop
-              </NavLink>
+              <CustomLink to='/'>Home</CustomLink>
+              <CustomLink to='/shop'>Shop</CustomLink>
               <div className="nav-item dropdown">
                 <a
                   href="#"
@@ -135,3 +134,4 @@ export const Navbar = () => {
   </div>
   )
 }
+

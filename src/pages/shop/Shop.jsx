@@ -3,6 +3,7 @@ import { Product } from './Product'
 import { Breadcrumbs } from './Breadcrumbs'
 import { Sidebar } from './Sidebar'
 import { Sorting } from './Sorting'
+import { ProductDetail } from './product/ProductDetail'
 
 export const Shop = () => {
   return (
