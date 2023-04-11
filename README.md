@@ -24,7 +24,7 @@
 - [x] Multi-page
 - [x] Display all products
 - [ ] User login
-- [ ] View product
+- [x] View product
 - [ ] Add to cart
 - [ ] Search Product
 - [ ] Sort Product by Category
