@@ -25,7 +25,7 @@
 - [x] Display all products
 - [ ] User login
 - [x] View product
-- [ ] Add to cart
+- [x] Add to cart
 - [ ] Search Product
 - [ ] Sort Product by Category
 - [ ] Add to wishlist
