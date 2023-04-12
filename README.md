@@ -24,8 +24,8 @@
 - [x] Multi-page
 - [x] Display all products   
 - [x] View product
-- [ ] Add to cart
-- [ ] Add to wishlist
+- [x] Add to cart
+- [x] Add to wishlist
 - [x] Search Product
 - [x] Sort Product by Category
 - [x] User Login
@@ -35,9 +35,12 @@
 ## ADDITIONAL POST-RELEASE FEATURES (OPTIONAL)
 - [ ] Cart checkout
 - [ ] Admin Dashboard
+- [ ] Database
 --- 
 
 ## BUGS | ISSUES
+### Please list any bugs you encountered here.
+1. There is no data persistence implemented in the features of the app except for the User Login, all state will be gone if you refresh the page.
 
 ---
 
@@ -45,6 +48,9 @@
 ```
 git clone https://github.com/KodeGO-6/Mini-Project-2-Shop-App.git
 ```
+
+## Install Yarn
+Follow the tutorials here >> https://yarnpkg.com/getting-started/install
 
 ## Install the dependencies
 ```
