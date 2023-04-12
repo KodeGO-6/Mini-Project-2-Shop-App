@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useResolvedPath, useMatch } from 'react-router-dom'
 import CustomLink from './CustomLink'
+import { SearchContext } from '../context/SearchContext'
 
 export const Navbar = () => {
+  const { category, categoryHandler } = useContext(SearchContext)
 
   return (
     <>
@@ -33,20 +35,20 @@ export const Navbar = () => {
                     Clothing <i className="fa fa-angle-right float-right mt-1" />
                   </a>
                   <div className="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                    <a href="" className="dropdown-item">
+                    <option value="men's clothing"  className="dropdown-item" onClick={categoryHandler}>
                       Men's Clothing
-                    </a>
-                    <a href="" className="dropdown-item">
+                    </option>
+                    <option value="women's clothing" className="dropdown-item" onClick={categoryHandler}>
                       Women's Clothing
-                    </a>
+                    </option>
                   </div>
                 </div>
-                <a href="" className="nav-item nav-link">
+                <option value='jewelery' className="nav-item nav-link" onClick={categoryHandler}>
                   Jewelery
-                </a>
-                <a href="" className="nav-item nav-link">
+                </option>
+                <option value='electronics' className="nav-item nav-link" onClick={categoryHandler}>
                   Electronics
-                </a>
+                </option>
               </div>
             </nav>
           </div>

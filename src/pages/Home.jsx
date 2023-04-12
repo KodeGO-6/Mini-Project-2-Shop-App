@@ -5,13 +5,13 @@ import { Categories } from './home/Categories'
 import { Offer } from './home/Offer'
 import { FeaturedProducts } from './home/FeaturedProducts'
 
-export const Home = ({token}) => {
+export const Home = ({token, data}) => {
   return (
     <>
       <Carousel />
       <Featured />
       <Categories />
-      <FeaturedProducts token={token}/>
+      <FeaturedProducts data={data}  token={token}/>
       <Offer />
     </>
   )

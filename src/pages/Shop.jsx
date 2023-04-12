@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 import { Sidebar } from './shop/Sidebar'
 import { Product } from '../components/Product'
 
-export const Shop = ({token}) => {
+export const Shop = ({token, data}) => {
   return (
     <>
       <div className='container-fluid'>
@@ -49,7 +49,7 @@ export const Shop = ({token}) => {
                   </div>
               </div>
               {/* ---------- End of Sorting ---------- */}
-              <Product token={token} maxLength={20}/>
+              <Product token={token} data={data} maxLength={20}/>
             </div>
           </div>
           </div>

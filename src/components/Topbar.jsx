@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { SearchBar } from './SearchBar'
 
 export const Topbar = ({token, setToken}) => {
     const navigate = useNavigate()
@@ -43,18 +44,7 @@ export const Topbar = ({token, setToken}) => {
                 <span className="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
             </Link>
             </div>
-            <div className="col-lg-4 col-6 text-left">
-                <form>
-                    <div className="input-group">
-                        <input type="text" className="form-control" placeholder="Search for products" />
-                        <div className="input-group-append">
-                            <span className="input-group-text bg-transparent text-primary">
-                            <i className="fa fa-search" />
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <SearchBar />
             <div className="col-lg-4 col-6 text-right">
                 <p className="m-0">Customer Service</p>
                 <h5 className="m-0">+012 345 6789</h5>

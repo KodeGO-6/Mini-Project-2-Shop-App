@@ -1,13 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import FetchProduct from '../data/FetchProduct'
 import { TrucateText } from './TrucateText'
 
-export const Product = ({token, maxLength}) => {
-    const { data, loading, error } = FetchProduct('https://fakestoreapi.com/products')
-    
-    { loading && <div>Loading...</div> }
-    { error && <div>Error: {error}</div> }
+export const Product = ({token, data, maxLength}) => {
 
     return (
         <>
