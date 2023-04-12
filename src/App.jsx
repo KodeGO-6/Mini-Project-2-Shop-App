@@ -35,7 +35,7 @@ function App() {
                 <Route path='/' index element={<Home token={token} data={data}/>} />
                 <Route path='/login' element={<Login token={token} setToken={setToken} />} />
                 <Route path='/shop' element={<Shop token={token} data={data}/>} />
-                <Route path='/cart' element={<Cart />} />
+                <Route path='/cart' element={<Cart data={data}/>} />
                 <Route path='/wishlist' element={<Wishlist data={data}/>} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/products/:pid' element={<ProductDetail token={token} />} />

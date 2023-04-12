@@ -4,7 +4,7 @@ import { TrucateText } from './TrucateText'
 import { ShopContext } from '../context/ShopContext'
 
 export const Product = ({token, data, maxLength}) => {
-    const { likeItems, addToLikes } = useContext(ShopContext)
+    const { cartItems, addToCart, removeFromCart, getTotalCartAmount, updateCartItemCount, likeItems, addToLikes } = useContext(ShopContext)
 
     return (
         <>
