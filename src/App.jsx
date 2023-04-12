@@ -6,6 +6,7 @@ import { Login } from './pages/Login'
 import { Shop } from './pages/Shop'
 import { Navbar } from './components/Navbar'
 import { Topbar } from './components/Topbar'
+import { Footer } from './components/Footer'
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('userToken') ?? null)
@@ -18,8 +19,9 @@ function App() {
         <Routes>
           <Route path='/' index element={<Home token={token} />} />
           <Route path='/login' element={<Login token={token} setToken={setToken} />} />
-          <Route path='/shop' element={<Shop />} />
+          <Route path='/shop' element={<Shop token={token} />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   )

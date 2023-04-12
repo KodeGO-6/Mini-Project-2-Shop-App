@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import FetchProduct from '../data/FetchProduct'
 import { TrucateText } from './TrucateText'
 
-export const Product = ({token}) => {
+export const Product = ({token, maxLength}) => {
     const { data, loading, error } = FetchProduct('https://fakestoreapi.com/products')
     
     { loading && <div>Loading...</div> }
@@ -12,7 +12,7 @@ export const Product = ({token}) => {
     return (
         <>
             {data.map(product => (
-                <div className="col-lg-3 col-md-4 col-sm-6 pb-1"  key={product.id}>
+                <div className="col-lg-4 col-lg-3 col-md-4 col-sm-6 pb-1"  key={product.id}>
                     <div className="product-item bg-light mb-4">
                         <div className="product-img position-relative overflow-hidden">
                             <img className="img-fluid w-100" src={product.image} alt="" />
@@ -49,7 +49,7 @@ export const Product = ({token}) => {
                         </div>
                     </div>
                 </div>
-            )).slice(0, 8)}
+            )).slice(0, maxLength)}
         </>
     )
 }

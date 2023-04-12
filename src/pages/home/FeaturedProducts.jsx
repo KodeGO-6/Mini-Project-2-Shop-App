@@ -8,7 +8,7 @@ export const FeaturedProducts = ({token}) => {
             <span className="bg-secondary pr-3">Featured Products</span>
         </h2>
         <div className="row px-xl-5">
-            <Product token={token} />
+            <Product token={token} maxLength={6} />
         </div>
     </div>
   )
