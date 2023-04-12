@@ -26,8 +26,8 @@
 - [x] View product
 - [x] Add to cart
 - [ ] Add to wishlist
-- [ ] Search Product
-- [ ] Sort Product by Category
+- [x] Search Product
+- [x] Sort Product by Category
 
 ---
 
