@@ -9,12 +9,11 @@ export const Navbar = () => {
       <div className="container-fluid bg-dark mb-30">
         <div className="row px-xl-5">
           <div className="col-lg-3 d-none d-lg-block">
-            <a
+            <a 
               className="btn d-flex align-items-center justify-content-between bg-primary w-100"
               data-toggle="collapse"
               href="#navbar-vertical"
-              style={{ height: 65, padding: "0 30px" }}
-            >
+              style={{ height: 65, padding: "0 30px" }}>
               <h6 className="text-dark m-0">
                 <i className="fa fa-bars mr-2" />
                 Categories
@@ -24,15 +23,13 @@ export const Navbar = () => {
             <nav
               className="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
               id="navbar-vertical"
-              style={{ width: "calc(100% - 30px)", zIndex: 999 }}
-            >
+              style={{ width: "calc(100% - 30px)", zIndex: 999 }}>
               <div className="navbar-nav w-100">
                 <div className="nav-item dropdown dropright">
                   <a
                     href="#"
                     className="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
+                    data-toggle="dropdown">
                     Clothing <i className="fa fa-angle-right float-right mt-1" />
                   </a>
                   <div className="dropdown-menu position-absolute rounded-0 border-0 m-0">
@@ -67,14 +64,12 @@ export const Navbar = () => {
                 type="button"
                 className="navbar-toggler"
                 data-toggle="collapse"
-                data-target="#navbarCollapse"
-              >
+                data-target="#navbarCollapse">
                 <span className="navbar-toggler-icon" />
               </button>
               <div
                 className="collapse navbar-collapse justify-content-between"
-                id="navbarCollapse"
-              >
+                id="navbarCollapse">
                 <div className="navbar-nav mr-auto py-0">
                   <CustomLink to='/'>Home</CustomLink>
                   <CustomLink to='/shop'>Shop</CustomLink>

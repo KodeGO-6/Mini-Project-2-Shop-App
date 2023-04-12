@@ -64,7 +64,7 @@ export const Login = ({ token, setToken }) => {
                     <b></b>
                     <span></span>
                 </div>
-                { error && <small>{error}</small>}
+                { error && <small style={{color: 'red', marginTop: '20px'}}>{error}</small>}
                 <div className='login-btn'>
                     <button 
                         type='submit' 
