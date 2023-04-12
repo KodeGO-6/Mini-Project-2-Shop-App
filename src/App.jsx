@@ -31,8 +31,8 @@ function App() {
             <Route path='/login' element={<Login token={token} setToken={setToken} />} />
             <Route path='/shop' element={<Shop token={token} data={data}/>} />
             <Route path='/products/:pid' element={<ProductDetail token={token} />} />
-            <Route path='/search/:query' element={<SearchResult />} />
-            <Route path='/category/:category' element={<CategoryResult />} />
+            <Route path='/search/:query' element={<SearchResult token={token}/>} />
+            <Route path='/category/:category' element={<CategoryResult token={token}/>} />
           </Routes>
           <Footer />
         </SearchContextProvider>

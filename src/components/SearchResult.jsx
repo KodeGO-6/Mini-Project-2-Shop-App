@@ -12,6 +12,14 @@ export const SearchResult = ({token}) => {
                 <div className="product-item bg-light mb-4">
                     <div className="product-img position-relative overflow-hidden">
                         <img className="img-fluid w-100" src={product.image} alt="" />
+                        <div className="product-action">
+                            { token ? <Link className={'btn btn-outline-dark btn-square'} onClick={() => addToCart(product.id)}>
+                                <i className="fas fa-shopping-cart" />
+                            </Link> : '' }
+                            { token ? <Link className="btn btn-outline-dark btn-square" >
+                                <i className="fas fa-heart" />
+                            </Link> : '' }
+                        </div>
                     </div>
                     <div className="text-center py-4">
                         <Link 

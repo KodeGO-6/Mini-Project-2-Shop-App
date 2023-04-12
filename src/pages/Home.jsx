@@ -10,7 +10,6 @@ export const Home = ({token, data}) => {
     <>
       <Carousel />
       <Featured />
-      <Categories />
       <FeaturedProducts data={data}  token={token}/>
       <Offer />
     </>

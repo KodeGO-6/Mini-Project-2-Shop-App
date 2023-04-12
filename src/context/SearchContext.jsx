@@ -45,7 +45,7 @@ export const SearchContextProvider = (props) => {
         searchHandler, 
         categoryHandler, 
         filteredCategory,
-        onSearchClick 
+        onSearchClick
     }
 
   return (
