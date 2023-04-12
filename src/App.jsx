@@ -16,6 +16,7 @@ import { CategoryResult } from './components/CategoryResult'
 import { SearchContextProvider } from './context/SearchContext'
 import { ShopContextProvider } from './context/ShopContext'
 import FetchProduct from './data/FetchProduct'
+import { BackToTop } from './components/BackToTop'
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('userToken') ?? null)
@@ -43,6 +44,7 @@ function App() {
                 <Route path='/category/:category' element={<CategoryResult token={token}/>} />
               </Routes>
               <Footer />
+              <BackToTop />
             </SearchContextProvider>
           </ShopContextProvider>
         </Router>
