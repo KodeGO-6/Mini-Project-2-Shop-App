@@ -76,6 +76,7 @@ export const Navbar = () => {
                   <CustomLink to='/'>Home</CustomLink>
                   <CustomLink to='/shop'>Shop</CustomLink>
                   <CustomLink to='/cart'>Shopping Cart</CustomLink>
+                  <CustomLink to="/wishlist">My Wishlist</CustomLink>
                   <CustomLink to="/contact">Contact</CustomLink>
                 </div>
                 <div className="navbar-nav ml-auto py-0 d-none d-lg-block">

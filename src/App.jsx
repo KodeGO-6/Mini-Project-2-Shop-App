@@ -4,14 +4,22 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
 import { Shop } from './pages/Shop'
+import { Cart } from './pages/Cart'
+import { Wishlist } from './pages/Wishlist'
+import { Contact } from './pages/Contact'
+import { ProductDetail } from './pages/shop/ProductDetail'
 import { Navbar } from './components/Navbar'
 import { Topbar } from './components/Topbar'
 import { Footer } from './components/Footer'
-import { ProductDetail } from './pages/shop/ProductDetail'
-import FetchProduct from './data/FetchProduct'
-import { SearchContextProvider } from './context/SearchContext'
 import { SearchResult } from './components/SearchResult'
 import { CategoryResult } from './components/CategoryResult'
+import { SearchContextProvider } from './context/SearchContext'
+import { ShopContextProvider } from './context/ShopContext'
+import FetchProduct from './data/FetchProduct'
+
+
+
+
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('userToken') ?? null)
@@ -23,19 +31,24 @@ function App() {
   return (
     <div className="App">
         <Router>
-        <SearchContextProvider>
-          <Topbar token={token} setToken={setToken} />
-          <Navbar />
-          <Routes>
-            <Route path='/' index element={<Home token={token} data={data}/>} />
-            <Route path='/login' element={<Login token={token} setToken={setToken} />} />
-            <Route path='/shop' element={<Shop token={token} data={data}/>} />
-            <Route path='/products/:pid' element={<ProductDetail token={token} />} />
-            <Route path='/search/:query' element={<SearchResult token={token}/>} />
-            <Route path='/category/:category' element={<CategoryResult token={token}/>} />
-          </Routes>
-          <Footer />
-        </SearchContextProvider>
+          <ShopContextProvider>
+            <SearchContextProvider>
+              <Topbar token={token} setToken={setToken} />
+              <Navbar />
+              <Routes>
+                <Route path='/' index element={<Home token={token} data={data}/>} />
+                <Route path='/login' element={<Login token={token} setToken={setToken} />} />
+                <Route path='/shop' element={<Shop token={token} data={data}/>} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/wishlist' element={<Wishlist />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/products/:pid' element={<ProductDetail token={token} />} />
+                <Route path='/search/:query' element={<SearchResult token={token}/>} />
+                <Route path='/category/:category' element={<CategoryResult token={token}/>} />
+              </Routes>
+              <Footer />
+            </SearchContextProvider>
+          </ShopContextProvider>
         </Router>
     </div>
   )

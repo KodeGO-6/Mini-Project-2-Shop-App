@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { TrucateText } from './TrucateText'
+import { ShopContext } from '../context/ShopContext'
 
 export const Product = ({token, data, maxLength}) => {
+    const { likeItems, addToLikes } = useContext(ShopContext)
 
     return (
         <>
@@ -15,7 +17,7 @@ export const Product = ({token, data, maxLength}) => {
                                     { token ? <Link className={'btn btn-outline-dark btn-square'} onClick={() => addToCart(product.id)}>
                                         <i className="fas fa-shopping-cart" />
                                     </Link> : '' }
-                                    { token ? <Link className="btn btn-outline-dark btn-square" >
+                                    { token ? <Link className="btn btn-outline-dark btn-square" onClick={() => addToLikes(product.id)}>
                                         <i className="fas fa-heart" />
                                     </Link> : '' }
                                 </div>
