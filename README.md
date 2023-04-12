@@ -24,15 +24,15 @@
 - [x] Multi-page
 - [x] Display all products   
 - [x] View product
-- [x] Add to cart
+- [ ] Add to cart
 - [ ] Add to wishlist
 - [x] Search Product
 - [x] Sort Product by Category
+- [x] User Login
 
 ---
 
 ## ADDITIONAL POST-RELEASE FEATURES (OPTIONAL)
-- [ ] User login 
 - [ ] Cart checkout
 - [ ] Admin Dashboard
 --- 
