@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { SearchBar } from './SearchBar'
+import { ShopContext } from '../context/ShopContext'
 
 export const Topbar = ({token, setToken}) => {
+    const { setCartItems, setLikeItems } = useContext(ShopContext)
+
     const navigate = useNavigate()
 
     const logOutHandler = () => {
         setToken(null)
+        setCartItems(null)
+        setLikeItems(null)
         localStorage.clear()
     }
 

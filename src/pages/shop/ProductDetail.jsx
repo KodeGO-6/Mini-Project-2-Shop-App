@@ -37,19 +37,19 @@ export const ProductDetail = ({token}) => {
                     <div className="d-flex align-items-center mb-4 pt-2">
                         <div className="input-group quantity mr-3" style={{width: '130px'}}>
                             <div className="input-group-btn">
-                                <button className="btn btn-primary btn-minus " onClick={() => removeFromCart(data.id)}>
+                                { token ? <button className="btn btn-primary btn-minus " onClick={() => removeFromCart(data.id)}>
                                     <BsCartDashFill />
-                                </button>
+                                </button> : '' }
                             </div>
-                            <input 
+                            { token ? <input 
                                 type="text" 
                                 className="form-control bg-secondary border-0 text-center"  
                                 value={cartItems[data.id]} 
-                                onChange={(e) => updateCartItemCount(Number(e.target.value))}/>
+                                onChange={(e) => updateCartItemCount(Number(e.target.value))}/> : '' }
                             <div className="input-group-btn">
-                                <button className="btn btn-primary btn-plus " onClick={() => addToCart(data.id)}>
+                                { token ? <button className="btn btn-primary btn-plus " onClick={() => addToCart(data.id)}>
                                     <BsCartPlusFill />
-                                </button>
+                                </button> : '' }
                             </div>
                         </div>
                     </div>

@@ -24,7 +24,6 @@ export const Login = ({ token, setToken }) => {
         }).then(res => {
             setToken(res.data.token)
             localStorage.setItem('userToken', res.data.token)
-            console.log(res.data.token)
             navigate('/')
         }).catch(err => {
             setError(err.response.data)

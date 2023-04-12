@@ -8,9 +8,9 @@ export const Wishlist = ({data}) => {
   return (
     <>
     <div className='container-fluid'>
-        <h5 className='section-title position-relative text-uppercase mb-3'>
-              <span className='bg-secondary pr-3'>My Wishlist</span>
-        </h5>
+      <h2 className="section-title position-relative text-uppercase mx-xl-5 mb-4">
+        <span className="bg-secondary pr-3">My Wishlist</span>
+      </h2>
         <div className='row px-xl-5'>
           <div className="col-lg-8 table-responsive mb-5">
             <table className='table table-light table-borderless table-hover text-center mb-0'>
