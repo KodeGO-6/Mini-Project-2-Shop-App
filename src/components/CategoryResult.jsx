@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { SearchContext } from '../context/SearchContext'
 import { TrucateText } from './TrucateText'
+import { ShopContext } from '../context/ShopContext'
 
 export const CategoryResult = ({token}) => {
     const { category, filteredCategory } = useContext(SearchContext)
+    const { addToCart, addToLikes } = useContext(ShopContext)
 
     const SortCategory = () => {
         return filteredCategory(category).map(product => (
@@ -16,7 +18,7 @@ export const CategoryResult = ({token}) => {
                             { token ? <Link className={'btn btn-outline-dark btn-square'} onClick={() => addToCart(product.id)}>
                                 <i className="fas fa-shopping-cart" />
                             </Link> : '' }
-                            { token ? <Link className="btn btn-outline-dark btn-square" >
+                            { token ? <Link className="btn btn-outline-dark btn-square" onClick={() => addToLikes(product.id)}>
                                 <i className="fas fa-heart" />
                             </Link> : '' }
                         </div>

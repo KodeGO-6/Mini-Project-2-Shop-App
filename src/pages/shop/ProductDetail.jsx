@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import FetchProductDetails from '../../data/FetchProductDetails'
+import { ShopContext } from '../../context/ShopContext'
+import { BsCartPlusFill, BsCartDashFill } from 'react-icons/bs'
 
 export const ProductDetail = ({token}) => {
     const productId = useParams()
     const { data, loading, error } = FetchProductDetails(productId.pid)
+    const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext)
 
     { loading && <div>Loading...</div> }
     { error && <div>Error: {error}</div> }
@@ -34,19 +37,21 @@ export const ProductDetail = ({token}) => {
                     <div className="d-flex align-items-center mb-4 pt-2">
                         <div className="input-group quantity mr-3" style={{width: '130px'}}>
                             <div className="input-group-btn">
-                                <button className="btn btn-primary btn-minus disabled">
-                                    <i className="fa fa-minus"></i>
+                                <button className="btn btn-primary btn-minus " onClick={() => removeFromCart(data.id)}>
+                                    <BsCartDashFill />
                                 </button>
                             </div>
-                            <input type="text" className="form-control bg-secondary border-0 text-center" disabled value='1'/>
+                            <input 
+                                type="text" 
+                                className="form-control bg-secondary border-0 text-center"  
+                                value={cartItems[data.id]} 
+                                onChange={(e) => updateCartItemCount(Number(e.target.value))}/>
                             <div className="input-group-btn">
-                                <button className="btn btn-primary btn-plus disabled">
-                                    <i className="fa fa-plus"></i>
+                                <button className="btn btn-primary btn-plus " onClick={() => addToCart(data.id)}>
+                                    <BsCartPlusFill />
                                 </button>
                             </div>
                         </div>
-                        <button className="btn btn-primary px-3 disabled"><i className="fa fa-shopping-cart mr-1"></i> Add To
-                            Cart</button>
                     </div>
                     {/* ---------- Social Media Buttons ---------- */}
                     <div className="d-flex pt-2">
