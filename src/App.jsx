@@ -16,7 +16,7 @@ function App() {
         <Topbar token={token} setToken={setToken} />
         <Navbar />
         <Routes>
-          <Route path='/' index element={<Home />} />
+          <Route path='/' index element={<Home token={token} />} />
           <Route path='/login' element={<Login token={token} setToken={setToken} />} />
           <Route path='/shop' element={<Shop />} />
         </Routes>

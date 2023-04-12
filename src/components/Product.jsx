@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import FetchProduct from '../data/FetchProduct'
 import { TrucateText } from './TrucateText'
 
-export const Product = () => {
+export const Product = ({token}) => {
     const { data, loading, error } = FetchProduct('https://fakestoreapi.com/products')
     
     { loading && <div>Loading...</div> }
@@ -17,12 +17,12 @@ export const Product = () => {
                         <div className="product-img position-relative overflow-hidden">
                             <img className="img-fluid w-100" src={product.image} alt="" />
                                 <div className="product-action">
-                                    <Link className="btn btn-outline-dark btn-square" onClick={() => addToCart(product.id)}>
+                                    { token ? <Link className={'btn btn-outline-dark btn-square'} onClick={() => addToCart(product.id)}>
                                         <i className="fas fa-shopping-cart" />
-                                    </Link>
-                                    <Link className="btn btn-outline-dark btn-square" >
+                                    </Link> : '' }
+                                    { token ? <Link className="btn btn-outline-dark btn-square" >
                                         <i className="fas fa-heart" />
-                                    </Link>
+                                    </Link> : '' }
                                 </div>
                         </div>
                         <div className="text-center py-4">
