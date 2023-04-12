@@ -4,8 +4,8 @@ export const ShopContext = createContext(null)
 
 const getDefaultWishList = () => {
     let wishlist = {}
-    for (let i = 1; i < localStorage.getItem('products') + 1; i++){
-        wishlist[i] = 0
+    for (let i = 1; i < Number(localStorage.getItem('products')) + 1; i++){
+        wishlist[i] = false
     }
     return wishlist
 }
@@ -20,7 +20,6 @@ export const ShopContextProvider = (props) => {
     }
 
     const contextValue = {likeItems, addToLikes}
-
   return (
     <ShopContext.Provider value={contextValue}>
         {props.children}

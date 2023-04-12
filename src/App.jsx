@@ -17,10 +17,6 @@ import { SearchContextProvider } from './context/SearchContext'
 import { ShopContextProvider } from './context/ShopContext'
 import FetchProduct from './data/FetchProduct'
 
-
-
-
-
 function App() {
   const [token, setToken] = useState(localStorage.getItem('userToken') ?? null)
   const { data, loading, error } = FetchProduct('https://fakestoreapi.com/products')
@@ -40,7 +36,7 @@ function App() {
                 <Route path='/login' element={<Login token={token} setToken={setToken} />} />
                 <Route path='/shop' element={<Shop token={token} data={data}/>} />
                 <Route path='/cart' element={<Cart />} />
-                <Route path='/wishlist' element={<Wishlist />} />
+                <Route path='/wishlist' element={<Wishlist data={data}/>} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/products/:pid' element={<ProductDetail token={token} />} />
                 <Route path='/search/:query' element={<SearchResult token={token}/>} />

@@ -18,7 +18,7 @@ export const Product = ({token, data, maxLength}) => {
                                         <i className="fas fa-shopping-cart" />
                                     </Link> : '' }
                                     { token ? <Link className="btn btn-outline-dark btn-square" onClick={() => addToLikes(product.id)}>
-                                        <i className="fas fa-heart" />
+                                        <i className="fas fa-heart" style={{color: likeItems[product.id] !== true ? '' : 'red',}} />
                                     </Link> : '' }
                                 </div>
                         </div>

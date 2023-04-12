@@ -1,7 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { WishlistItem } from './wishlist/WishlistItem'
+import { ShopContext } from '../context/ShopContext'
 
-export const Wishlist = () => {
+export const Wishlist = ({data}) => {
+    const { likeItems } = useContext(ShopContext)
+
   return (
-    <div>Wishlist</div>
+    <>
+    <div className='container-fluid'>
+        <h5 className='section-title position-relative text-uppercase mb-3'>
+              <span className='bg-secondary pr-3'>My Wishlist</span>
+        </h5>
+        <div className='row px-xl-5'>
+          <div className="col-lg-8 table-responsive mb-5">
+            <table className='table table-light table-borderless table-hover text-center mb-0'>
+              <thead className='thead-dark'>
+                <tr>
+                  <th>Products</th>
+                  <th>Price</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody className='align-middle'>
+                {data.map((product) => {
+                  if(likeItems[product.id] !== false) {
+                    return <WishlistItem key={product.id} data={product}/>
+                  }
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }

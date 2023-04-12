@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import { Link, useResolvedPath, useMatch } from 'react-router-dom'
 import CustomLink from './CustomLink'
 import { SearchContext } from '../context/SearchContext'
+import { ShopContext } from '../context/ShopContext'
 
 export const Navbar = () => {
   const { category, categoryHandler } = useContext(SearchContext)
+  const { getTotalWishlistItems } = useContext(ShopContext)
 
   return (
     <>
