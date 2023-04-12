@@ -6,7 +6,9 @@ import { ShopContext } from '../context/ShopContext'
 
 export const Navbar = () => {
   const { category, categoryHandler } = useContext(SearchContext)
-  const { getTotalWishlistItems } = useContext(ShopContext)
+  const { likeItems, getTotalWishlistItem, getTotalCartItem } = useContext(ShopContext)
+  const totalWish = getTotalWishlistItem()
+  const totalItem = getTotalCartItem()
 
   return (
     <>
@@ -82,18 +84,18 @@ export const Navbar = () => {
                   <CustomLink to="/contact">Contact</CustomLink>
                 </div>
                 <div className="navbar-nav ml-auto py-0 d-none d-lg-block">
-                  <a href="" className="btn px-0">
                     <i className="fas fa-heart text-primary" />
                     <span
                       className="badge text-secondary border border-secondary rounded-circle"
-                      style={{ paddingBottom: 2 }}>0</span>
-                  </a>
-                  <a href="" className="btn px-0 ml-3">
+                      style={{ paddingBottom: 2 }}>
+                        { totalWish > 0 ? totalWish : 0 }
+                    </span>
                     <i className="fas fa-shopping-cart text-primary" />
                     <span
                       className="badge text-secondary border border-secondary rounded-circle"
-                      style={{ paddingBottom: 2 }}>0</span>
-                  </a>
+                      style={{ paddingBottom: 2 }}>
+                        { totalItem > 0 ? totalItem : 0 }
+                    </span>
                 </div>
               </div>
             </nav>

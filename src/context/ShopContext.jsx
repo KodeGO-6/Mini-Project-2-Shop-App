@@ -24,6 +24,26 @@ export const ShopContextProvider = (props) => {
     const [likeItems, setLikeItems] = useState(getDefaultWishList())
     //const { data } = FetchProduct('https://fakestoreapi.com/products')
 
+    const getTotalWishlistItem = () => {
+        let totalLikes = 0
+        for (const item in likeItems) {
+            if(likeItems[item] === true) {
+                totalLikes += 1
+            }
+        }
+        return totalLikes
+    }
+
+    const getTotalCartItem = () => {
+        let totalItems = 0
+        for (const item in cartItems) {
+            if(cartItems[item] > 0) {
+                totalItems += cartItems[item]
+            }
+        }
+        return totalItems
+    }
+
     const getTotalCartAmount = (data) => {
         let totalAmount = 0;
         for (const item in cartItems) {
@@ -76,8 +96,10 @@ export const ShopContextProvider = (props) => {
         removeFromCart,
         updateCartItemCount,
         deleteFromCart,
+        getTotalCartItem,
         likeItems, 
-        addToLikes
+        addToLikes,
+        getTotalWishlistItem
     }
 
   return (
