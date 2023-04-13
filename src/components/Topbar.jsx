@@ -13,6 +13,8 @@ export const Topbar = ({token, setToken}) => {
         setCartItems(null)
         setLikeItems(null)
         localStorage.clear()
+        navigate('/')
+        window.location.reload()
     }
 
     const logInHandler = () => {

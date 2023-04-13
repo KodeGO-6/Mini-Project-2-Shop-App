@@ -58,9 +58,11 @@ cd Mini-Project-2-Shop-App
 yarn
 ```
 
-## Running the App
+# Deploying the Static Site
+
+## Building the App
 ```
-yarn dev
+yarn run build
 ```
 
 ## Default Login Credentials

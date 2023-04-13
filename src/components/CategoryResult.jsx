@@ -6,7 +6,7 @@ import { ShopContext } from '../context/ShopContext'
 
 export const CategoryResult = ({token}) => {
     const { category, filteredCategory } = useContext(SearchContext)
-    const { addToCart, addToLikes } = useContext(ShopContext)
+    const { likeItems, addToCart, addToLikes } = useContext(ShopContext)
 
     const SortCategory = () => {
         return filteredCategory(category).map(product => (
@@ -19,7 +19,7 @@ export const CategoryResult = ({token}) => {
                                 <i className="fas fa-shopping-cart" />
                             </Link> : '' }
                             { token ? <Link className="btn btn-outline-dark btn-square" onClick={() => addToLikes(product.id)}>
-                                <i className="fas fa-heart" />
+                                <i className="fas fa-heart" style={{color: likeItems[product.id] !== true ? '' : 'red',}} />
                             </Link> : '' }
                         </div>
                     </div>
