@@ -1,4 +1,4 @@
-# Mini Project 2 - [INSERT APP NAME HERE]
+# Mini Project 2 - Go Shopper
 ---
 
 ### [Fake Store API](https://fakestoreapi.com/)
