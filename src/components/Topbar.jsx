@@ -47,7 +47,7 @@ export const Topbar = ({token, setToken}) => {
         <div className="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div className="col-lg-4">
             <Link to='/' className="text-decoration-none">
-                <span className="h1 text-uppercase text-primary bg-dark px-2">React</span>
+                <span className="h1 text-uppercase text-primary bg-dark px-2">Go</span>
                 <span className="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
             </Link>
             </div>
