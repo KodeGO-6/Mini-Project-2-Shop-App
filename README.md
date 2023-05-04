@@ -1,4 +1,4 @@
-# Mini Project 2 - Go Shopper
+# Mini Project 2 - [Go Shopper](https://marvelous-shortbread-f51d41.netlify.app/)
 ---
 
 ### [Fake Store API](https://fakestoreapi.com/)
